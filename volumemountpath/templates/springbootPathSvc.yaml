@@ -1,0 +1,15 @@
+---
+# Load Balancer Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: springbootappsvc
+  namespace: springbootpath
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 30444
+  selector:
+    name: springboot
